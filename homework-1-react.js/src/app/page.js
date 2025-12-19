@@ -64,3 +64,34 @@ export default function Home() {
     </div>
   );
 }
+
+import Navbar from "@/components/Navbar";
+
+export default function Page() {
+  const list = ["Home", "About", "Contact", "Cart"];
+
+  return (
+    <div>
+      <Navbar list={list} />
+    </div>
+  );
+}
+
+import React from "react";
+
+const Navbar = ({ list }) => {
+  return (
+    <nav>
+      <ul>
+        {list.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+
+
